@@ -15,10 +15,14 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var main: Main
 
+    @Inject
+    lateinit var qualifierExample: QualifierExample
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         car.getCar()
         main.getName()
+        qualifierExample.getName()
     }
 }
