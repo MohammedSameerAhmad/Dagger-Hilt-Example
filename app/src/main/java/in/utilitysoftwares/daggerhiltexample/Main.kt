@@ -14,9 +14,9 @@ interface One{
     fun getName()
 }
 
-class ImplementationOne @Inject constructor() : One{
+class ImplementationOne @Inject constructor(private val name :  String) : One{
     override fun getName(){
-        Log.d("main", "My Name is Sameer from ImplementationOne class")
+        Log.d("main", "My Name is $name from ImplementationOne class")
 
     }
 }
@@ -46,6 +46,10 @@ class  AppModule{
 
     @Provides
     @Singleton
-    fun binding() : One = ImplementationOne()
+    fun getName(): String  = "sameer"
+
+    @Provides
+    @Singleton
+    fun binding(name : String) : One = ImplementationOne(name)
 
 }
