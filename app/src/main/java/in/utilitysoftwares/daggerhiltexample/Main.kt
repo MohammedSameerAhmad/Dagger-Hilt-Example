@@ -3,6 +3,7 @@ package `in`.utilitysoftwares.daggerhiltexample
 import android.util.Log
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.internal.managers.ApplicationComponentManager
 import dagger.hilt.components.SingletonComponent
@@ -27,12 +28,24 @@ class Main @Inject constructor(private val one: One){
     }
 }
 
-@Module
+/*@Module
 @InstallIn(SingletonComponent::class)
 abstract class AppModule{
 
     @Binds
     @Singleton
     abstract fun binding(implementationOne: ImplementationOne) : One
+
+}*/
+
+// another way to provide interface dependency
+
+@Module
+@InstallIn(SingletonComponent::class)
+class  AppModule{
+
+    @Provides
+    @Singleton
+    fun binding() : One = ImplementationOne()
 
 }
