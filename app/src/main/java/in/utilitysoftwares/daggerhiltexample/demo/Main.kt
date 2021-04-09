@@ -1,12 +1,10 @@
 package `in`.utilitysoftwares.daggerhiltexample
 
 import android.util.Log
-import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.internal.managers.ApplicationComponentManager
-import dagger.hilt.components.SingletonComponent
+import dagger.hilt.android.components.ApplicationComponent
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -41,7 +39,7 @@ abstract class AppModule{
 // another way to provide interface dependency
 
 @Module
-@InstallIn(SingletonComponent::class)
+@InstallIn(ApplicationComponent::class)
 class  AppModule{
 
     @Provides

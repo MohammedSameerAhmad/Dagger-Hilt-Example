@@ -4,7 +4,7 @@ import android.util.Log
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.components.SingletonComponent
+import dagger.hilt.android.components.ApplicationComponent
 import javax.inject.Inject
 import javax.inject.Qualifier
 import javax.inject.Singleton
@@ -29,7 +29,7 @@ class QualifierExample @Inject constructor(
 }
 
 @Module
-@InstallIn(SingletonComponent::class)
+@InstallIn(ApplicationComponent::class)
 class AppModuleQualifier{
 
     @Provides
